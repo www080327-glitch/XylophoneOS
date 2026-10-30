@@ -21,6 +21,9 @@ int main(int argc,char **argv) {
     l->addWidget(new QLabel("Observe > Propose > Authorize > Execute > Verify"));
     auto *target=new QLineEdit("original");target->setAccessibleName("Draft title");target->setObjectName("draft-title");target->setMinimumHeight(36);l->addWidget(target);
     auto *password=new QLineEdit("never-export-secret");password->setEchoMode(QLineEdit::Password);password->setObjectName("protected-password");l->addWidget(password);
+    auto *protected_parent=new QWidget(panel);protected_parent->setProperty("xosSsgProtected",true);protected_parent->hide();
+    auto *protected_label=new QLabel("protected-subtree-secret",protected_parent);
+    protected_label->setObjectName("protected-subtree-secret");protected_label->setAccessibleName("protected-subtree-secret");
     auto *hidden=new QLabel("hidden text",panel);hidden->setObjectName("hidden-label");hidden->hide();
     auto *layer=new QWidget;layer->setFixedHeight(34);l->addWidget(layer);
     auto *covered=new QPushButton("Covered fixture",layer);covered->setObjectName("covered-button");covered->setGeometry(0,0,240,32);
@@ -63,14 +66,27 @@ int main(int argc,char **argv) {
         check(!QJsonDocument(snapshot).toJson().contains("original"),"content_redaction");
         std::printf("SEMANTIC_SNAPSHOT %s\n",QJsonDocument(snapshot).toJson(QJsonDocument::Compact).constData());
         check(scene.snapshot()["status"]=="DENIED","ssg_observation_default_denied");
-        scene.host_allow_observation(true);auto first=scene.snapshot();const auto first_version=first["sceneVersion"].toString().toULongLong();const auto epoch=first["sourceEpoch"].toString();
+        scene.host_allow_observation(true);
+        const auto protected_snapshot=scene.snapshot(false,"label");bool protected_seen=false;
+        for(auto v:protected_snapshot["nodes"].toArray()){const auto n=v.toObject();
+            if(n["textStatus"]=="PROTECTED" && n["sensitive"].toBool() && n["name"].toString().isEmpty() && n["nativeName"].toString().isEmpty())protected_seen=true;}
+        check(protected_snapshot["status"]=="OK" && !protected_snapshot["capped"].toBool() && protected_seen &&
+              !QJsonDocument(protected_snapshot).toJson().contains("protected-subtree-secret"),"ssg_protected_subtree_redaction");
+        auto first=scene.snapshot();const auto first_version=first["sceneVersion"].toString().toULongLong();const auto epoch=first["sourceEpoch"].toString();
         check(first["status"]=="OK" && !QJsonDocument(first).toJson().contains("never-export-secret"),"ssg_password_redaction");
         bool hidden_ok=false;for(auto v:first["nodes"].toArray()){auto n=v.toObject();if(n["nativeName"]=="hidden-label")hidden_ok=n["visibility"]=="hidden";}
         check(hidden_ok,"ssg_hidden_not_visible");
         bool covered_ok=false;for(auto v:first["nodes"].toArray()){auto n=v.toObject();if(n["nativeName"]=="covered-button")covered_ok=n["visibility"]=="locally-occluded-or-clipped";}
         check(covered_ok,"ssg_local_occlusion");
         scene.set_node_limit(0);check(scene.snapshot()["status"]=="RESOURCE_LIMIT","ssg_budget_denial");scene.set_node_limit(96);
-        target->setText("changed for diff");auto second=scene.snapshot();auto delta=scene.diff(first_version,epoch);check(delta["status"]=="OK" && !delta["changed"].toArray().isEmpty(),"ssg_incremental_change");
+        // The full tree above is intentionally bounded and may be capped. A
+        // filtered complete query is the appropriate basis for this diff test.
+        const auto before_edit=scene.snapshot(false,"textbox");
+        check(before_edit["status"]=="OK" && !before_edit["capped"].toBool(),"ssg_targeted_snapshot_complete");
+        target->setText("changed for diff");auto second=scene.snapshot(false,"textbox");
+        auto delta=scene.diff(before_edit["sceneVersion"].toString().toULongLong(),before_edit["sourceEpoch"].toString());
+        bool changed_target=false;for(auto v:delta["changed"].toArray()){auto n=v.toObject();if(n["nativeName"]=="draft-title" && n["text"]=="changed for diff")changed_target=true;}
+        check(!second["capped"].toBool() && delta["status"]=="OK" && changed_target,"ssg_incremental_change");
         check(QJsonDocument(delta).toJson().size()<QJsonDocument(second).toJson().size(),"ssg_diff_smaller");
         auto *ephemeral=new QLabel("temporary",panel);ephemeral->setObjectName("ephemeral");ephemeral->show();
         const auto with_node=scene.snapshot(false,"label");QString removed_id;
