@@ -20,6 +20,11 @@ UTF-8文件名、游戏及ncursesw前期探针。新增整合资格限于0081的
 Pillow线程故障根因仍未解，不授予线程/LocalPilot/发行资格。详见[0100](work_log/0100_pr_batch_delivery.md)。
 本组无公共build占用，旧冻结证据保持原样；以下任务/历史节保留其各自时点和输入。
 
+## Browser SSG 片段可见性修复（待审）
+
+逐真实渲染碎片裁剪，截断时保留未知；稳定查询作用域依赖 SDK Diff 修复。
+组合客体几何 6/6、Browser SSG 7/7 通过，见 [0107](work_log/0107_browser_ssg_fragments.md)。
+
 ## Aurora Browser PR #19 审查修复（待客体验证）
 
 同步 main `3e5ccd0` 后修复 HTTP host 分量校验及浏览器失败导航状态；宿主 parser
