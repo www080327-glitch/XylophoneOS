@@ -64,6 +64,10 @@ class verify_evidence_index_tests(unittest.TestCase):
         with self.assertRaises(ValueError):
             verifier.verify(self.root, "report/SHA256SUMS", paths_root="../outside")
 
+    def test_json_named_sha256sums_is_parsed_as_json(self):
+        index = self.index({"evidence.txt": self.sha}, name="PACKAGE_SHA256SUMS.json")
+        self.assertEqual(verifier.verify(self.root, index)["status"], "PASS")
+
     def test_empty_malformed_and_duplicate_indexes_fail_closed(self):
         for obj in ({}, {"evidence.txt": "bad"}, {"../outside": self.sha},
                     {"/absolute": self.sha}, {"evidence.txt": self.sha.upper()}):

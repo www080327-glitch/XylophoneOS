@@ -39,7 +39,7 @@ def no_duplicates(pairs):
 
 
 def parse_index(data, path, field=None):
-    if "SHA256SUMS" in path.name:
+    if "SHA256SUMS" in path.name and path.suffix != ".json":
         if field:
             raise ValueError("--field applies only to JSON indexes")
         entries = {}
