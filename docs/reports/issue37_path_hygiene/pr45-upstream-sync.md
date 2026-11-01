@@ -1,0 +1,5 @@
+# Dock draft: upstream synchronization and evidence export
+
+This branch integrates Desktop dependency `b16b1fd9bc50f627a3e582fccce2679817255ad5`, including upstream main `0a91a2bb1eabd6977f1001ac8bd7781a88fae225`. A real QEMU Desktop interactive run passed 10/10 checks. The already-built binaries were checked against their input receipts again after synchronization; their inputs and the guest runner were unchanged. A separate scanout comparison between the prior Desktop and this Dock observed changed pixels in all six fixed 800×600 button regions. That is not a semantic or aesthetic-quality rating.
+
+The original Dock archive contained 88 independently indexed members. Its public derivative has a new manifest, preserves 78 members byte-for-byte and changes path-bearing content in 10; owner names were removed from the archive metadata. Both sets of hashes and the original commit are recorded in `pr45-lineage.json`. Historical command placeholders require manual configuration; a portable end-to-end replay is not claimed. The original bytes remain available in old Git objects and local backups. The upstream dependencies have not been merged.

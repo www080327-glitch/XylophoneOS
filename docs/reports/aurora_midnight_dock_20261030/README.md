@@ -1,3 +1,7 @@
+> **Evidence version:** This is a path-sanitized derivative, not the original
+> byte stream. Original and export hashes, member changes, and the source commit
+> are recorded in [the provenance receipt](../issue37_path_hygiene/pr45-lineage.json).
+
 # Midnight Dock native glyph refinement
 
 Six original, small vector glyphs add recognisable Home, Apps, Studio, Settings,
@@ -24,7 +28,10 @@ initial cause is **unknown**, and the successful rerun does not eliminate an
 intermittent lifecycle risk.
 
 `manifest.json` records each run, commands and source/image/ELF hashes. The
-verified evidence bundle retains all raw PPMs, serial logs, reports, build
-receipts, comparison and failure; SHA-256 values are recorded for every member.
+verified derived evidence bundle retains the screenshots, serial logs, reports,
+build receipts, comparison and failure. Host paths and archive owner names have
+been sanitized; this bundle is not byte-identical to the original. SHA-256 values
+are recorded for every exported member. Historical command placeholders require
+configuration before use and have not been requalified as a reproduction recipe.
 This does not implement multiwindow composition, cross-process theme negotiation,
 real-time refraction, broader resolution coverage or a performance improvement.

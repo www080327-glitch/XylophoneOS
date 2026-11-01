@@ -3,10 +3,10 @@
   "dependency_code": "b1b56225 + 8120215 + 3995120 + 0a40448 + c5b122a",
   "source_sha256": "8750f62e1aefe60db50eea43315ec4cb7e371bc288f308cf875e72be8912620d",
   "scanout_check_sha256": "cff89f6588a5f77c2e67f60b2ee13c4bce3cd9cc37a7625fea40041fe1529ffc",
-  "bundle_sha256": "0cb4fdf3eca73f0f0272663a018564bfa4edbd300e7b99bd1cf41b9c312f659a",
+  "bundle_sha256": "f30aa157ec3d842eea22ce0c2aad5c3b89b92ec0ece26569d2d09cb424b9c7a1",
   "bundle_entries_sha256": {
-    "desktop.receipt.json.gz": "769e3a3115632795408d88f59adb6f23030e2574fb6c4246652bc54cff71536e",
-    "dock-build.log.gz": "2e5041a095901665273248213b7f5300dfecb79c472ced8dfd3b8a9a449c474a",
+    "desktop.receipt.json.gz": "42a86115eb0a81dd4d609c3197be75014e89fff90c2bbdd7210456f78fe422c9",
+    "dock-build.log.gz": "2a61934a85bf9bf8f86a7a5f1e4894502aef9bcd80390e2d52e3c827494f208d",
     "dock-desktop-interactive/component-studio.png": "da96ea5263745fce263b7452893be5cec9c62d35aaf7f44ba1eac3c0c2fd2669",
     "dock-desktop-interactive/component-studio.ppm.gz": "1c634a9a4f9fb541ef878369381bb3a5747bdb1b425f3dc5d777a1c3661abf0b",
     "dock-desktop-interactive/daybreak-home.png": "61d3d47b4cbd568487686e2520f64d04c5d21b5f306b784752c8cb8620bae2a0",
@@ -33,7 +33,7 @@
     "dock-desktop-interactive/reduceMotion.ppm.gz": "a1eff8c9d7060214e992243df6b5c9265dee4e0627d21971fbfb0dc2b0f5f6ed",
     "dock-desktop-interactive/reduceTransparency.png": "ca04e4770ad2c1ae3faa7ad26fadf4327351738b661c969cdc32816e32cb1dd8",
     "dock-desktop-interactive/reduceTransparency.ppm.gz": "ff3d0aaa4585b654abd3f061d96fbaaf3abead81a6752f705c57b5403d8b2e61",
-    "dock-desktop-interactive/report.json": "6db3677fd88e1640b81a370ace1f30ab3c8c0ee4a717f5186b1e0a3b8f2b8c46",
+    "dock-desktop-interactive/report.json": "fdacd8c1f61a1428823820154aacf67d9bb6106f4091959e4f1275010aa1a5b4",
     "dock-desktop-interactive/serial.log.gz": "c3265cc681717d6536a6795f7fd12619166ccdfb9c7df1d0b0f0f6a164d3611f",
     "dock-desktop-interactive/wallpaper-alternative.png": "9c18594d41bb91bcebbcd86223d7d0148f770edfd5e1d3305308a948269daac7",
     "dock-desktop-interactive/wallpaper-alternative.ppm.gz": "ebbff55150bad27fce96bac37d710ba858724be3d63e9337bf5de56ba1eb9670",
@@ -44,7 +44,7 @@
     "dock-desktop-lifecycle/legacy-no-aurora.ppm.gz": "6a140a24ddddd0db8f76a1c61d54f29e6aeaf0f1b527329f201d265b4508d483",
     "dock-desktop-lifecycle/midnight-home.png": "3f54e139a344c8eb38c0b6638e2a79a9e175882e7656d4d9daff1c8a3dbd5389",
     "dock-desktop-lifecycle/midnight-home.ppm.gz": "7f23c47d9e32cd206df5b75332538138806369b1b94abfd7b43f35adf980393c",
-    "dock-desktop-lifecycle/report.json": "f0b23500608a4e61cdda6fcd42bdecd7f0846b5285c9ef91a5245ce867b7dba1",
+    "dock-desktop-lifecycle/report.json": "8c571694932a89073cd42f72ecca72f56129c379938fe44751b772edcbd9ffd3",
     "dock-desktop-lifecycle/serial.log.gz": "aa3365e56672734647902dd12f64008fbe5f4c71ec8151196dc51a75c5f6afe9",
     "dock-desktop-lifecycle.log.gz": "3cd908f9229aedb0a37cbdf97114d1c1267130c4e1c37fea2536019bbb17469c",
     "dock-desktop-session/guest_qemu.log.gz": "2a604bf9512348e369b2ab99d74b105694e35e47a6f39af0c51bcb38b917faa4",
@@ -57,7 +57,7 @@
     "dock-desktop-session/launched-3.ppm.gz": "368cf266d821a1f7a48b26080a651fcbf72c123d7c65ed4669e729b86a34074f",
     "dock-desktop-session/legacy-no-aurora.png": "afb769fe58d17c9a6113f57330b1103fc9ef418b9bf54a748c8af641e9b29549",
     "dock-desktop-session/legacy-no-aurora.ppm.gz": "2208d3205169d9412ba0503384f2340d9db34ecbf9e436e9988ecb1d25cabab8",
-    "dock-desktop-session/report.json": "90b43e3904ede956bf5686773aaadbc3110621e87871a31b033ecd849ded80f3",
+    "dock-desktop-session/report.json": "6505420742e9686e1b5aad67c676d111e5ec685e060d4b33648e5de78b3fb905",
     "dock-desktop-session/serial.log.gz": "0212cb03401234c31b1fc62c52b94113ed3a108c25f8d921768b71ed3eda8edb",
     "dock-desktop-session.log.gz": "7e4f7e269ac14b2302f899fb27614fc849b73b57a50fbea1c6114ed32ccf0d59",
     "dock-desktop-studio/guest_qemu.log.gz": "0eb2030d3d24e0f4897bc9df79c8e4ee64bf282830fbd1cfb19073f11cfe2798",
@@ -70,15 +70,15 @@
     "dock-desktop-studio/independent-studio-light.ppm.gz": "eaddb67424218de6ba19ac3e1210d02f31b8c38064fd0ee29c05e6221a155542",
     "dock-desktop-studio/legacy-no-aurora.png": "afb769fe58d17c9a6113f57330b1103fc9ef418b9bf54a748c8af641e9b29549",
     "dock-desktop-studio/legacy-no-aurora.ppm.gz": "2208d3205169d9412ba0503384f2340d9db34ecbf9e436e9988ecb1d25cabab8",
-    "dock-desktop-studio/report.json": "20605c4c0127740e345a497dc5d159c8aef33d7b7d0161972b04c57334e055da",
+    "dock-desktop-studio/report.json": "390133ef0c1846dd0d1d4e2bb16dd32cff2a50403573eb0bd683fb78f1ccbaee",
     "dock-desktop-studio/serial.log.gz": "11c673945ab0c69d4af7f0d0646335fe84cedb0c447566ce67d9eb999130d6c0",
-    "dock-desktop-studio.log.gz": "bd0d391516a7b2e8afff0bb1bd59167706d4fc99e99c8087b407f1b7e8edf08f",
+    "dock-desktop-studio.log.gz": "76694b5c2be61ff27bc764c470b148f486eebdc3a3f35002fd9bfe4ca6261b5f",
     "dock-platform-dash/guest_qemu.log.gz": "45c8157333a5dbb4c3bd5bccba30c3872fa897d796ade9e89dc68186b920d9f3",
     "dock-platform-dash/guest_serial.log.gz": "2ac77da17adc3794577c8b90f7ab1bd44550594706fc5a3c96ab69c1b2051adb",
-    "dock-platform-dash/report.json": "4a11e39e9e859a45b402fcea0b13e873694999b9dad97c1001b1a0b46f90882b",
+    "dock-platform-dash/report.json": "764a3534638960a0d8874f5e394cabe3682df864c6994c09a34b91bf896019b2",
     "dock-platform-dash/serial.log.gz": "2ac77da17adc3794577c8b90f7ab1bd44550594706fc5a3c96ab69c1b2051adb",
     "dock-platform-dash.log.gz": "7899a885c8d9ea19064ba67f0776b51db7c63eae0120bcd7dc042f36086e78b9",
-    "dock-regressions.json.gz": "5c725caf140dc0f245ea8f5377595f9e577bc27523d1559c4c0a41282088e0ae",
+    "dock-regressions.json.gz": "c7867cf670fc47a53f094a8a60c398c738997238f5cfe2fc5f493fd0a42dd10d",
     "dock-studio-rerun/guest_qemu.log.gz": "cd27f13e8f984ee1759b2d2d0ed065c216b4e5f6f46f34b5c8826ebfcf52ea9b",
     "dock-studio-rerun/guest_serial.log.gz": "744f554cf8d2ef198f152036fdfdce66a59ad2d5bfd816a595a0ae7e05cf1473",
     "dock-studio-rerun/independent-menu.png": "7f453a0055cb802b7d0a44ff0a43b88e8a02b51092600af953ff4e71870426b0",
@@ -89,7 +89,7 @@
     "dock-studio-rerun/independent-studio-light.ppm.gz": "eaddb67424218de6ba19ac3e1210d02f31b8c38064fd0ee29c05e6221a155542",
     "dock-studio-rerun/legacy-no-aurora.png": "c184f04636cf3675c3dd7b1163dbc6e1a171722b4690cd8cf41df2b180126d74",
     "dock-studio-rerun/legacy-no-aurora.ppm.gz": "6a140a24ddddd0db8f76a1c61d54f29e6aeaf0f1b527329f201d265b4508d483",
-    "dock-studio-rerun/report.json": "98ccb6d6b3a975ebdfdab0e410795b6afe596894bdd9dcb0548cf37660f6d5e5",
+    "dock-studio-rerun/report.json": "038f42512db8f41c7c6e3cd8b78e3c8cb1a7a4a18ef642c74b973ed5d1a26188",
     "dock-studio-rerun/serial.log.gz": "744f554cf8d2ef198f152036fdfdce66a59ad2d5bfd816a595a0ae7e05cf1473",
     "dock-studio-rerun.log.gz": "3e1ae6d3cfdfacde3081ac6f48ccf6192d078e017f0ee40abf486bfa6a7a996e",
     "run-dock-regressions.py.gz": "7553f15d50cf176dcc6b592edc779a79b9af1f92ad0c1cc6412116ff5c15e937"
@@ -109,7 +109,7 @@
       },
       "image_sha256": "165686bb0de0b0b2f33645ede2cf10c2badb25ea363f3ef57ed74641503b0b08",
       "qemu_command": [
-        "/Users/perry_guo/Documents/ChatGPT/os/runtime/qemu-prefix/Cellar/qemu/11.1.2/bin/qemu-system-x86_64",
+        "${XOS_LOCAL_PATH_0939715e8e41}",
         "-machine",
         "pc-i440fx-10.0",
         "-accel",
@@ -127,7 +127,7 @@
         "-rtc",
         "base=utc,clock=host",
         "-drive",
-        "file=/Users/perry_guo/Documents/ChatGPT/os/XylophoneOS-aurora-glass/build/aurora_glass/system-v5/xos.img,format=raw,if=floppy,index=0,readonly=on",
+        "file=${XOS_LOCAL_PATH_51a25efb2781},format=raw,if=floppy,index=0,readonly=on",
         "-boot",
         "order=a,strict=on",
         "-no-reboot",
@@ -138,9 +138,9 @@
         "-display",
         "none",
         "-drive",
-        "file=/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_desktop_iejijzhv/work.img,format=raw,if=ide,index=0,media=disk,cache=writeback",
+        "file=${XOS_LOCAL_PATH_7b756a2d342c},format=raw,if=ide,index=0,media=disk,cache=writeback",
         "-qmp",
-        "unix:/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_2uyjnh2x/qmp.sock,server=on,wait=off"
+        "unix:${XOS_LOCAL_PATH_62ff904cb68f},server=on,wait=off"
       ]
     },
     "dock-desktop-lifecycle": {
@@ -157,7 +157,7 @@
       },
       "image_sha256": "165686bb0de0b0b2f33645ede2cf10c2badb25ea363f3ef57ed74641503b0b08",
       "qemu_command": [
-        "/Users/perry_guo/Documents/ChatGPT/os/runtime/qemu-prefix/Cellar/qemu/11.1.2/bin/qemu-system-x86_64",
+        "${XOS_LOCAL_PATH_0939715e8e41}",
         "-machine",
         "pc-i440fx-10.0",
         "-accel",
@@ -175,7 +175,7 @@
         "-rtc",
         "base=utc,clock=host",
         "-drive",
-        "file=/Users/perry_guo/Documents/ChatGPT/os/XylophoneOS-aurora-glass/build/aurora_glass/system-v5/xos.img,format=raw,if=floppy,index=0,readonly=on",
+        "file=${XOS_LOCAL_PATH_51a25efb2781},format=raw,if=floppy,index=0,readonly=on",
         "-boot",
         "order=a,strict=on",
         "-no-reboot",
@@ -186,9 +186,9 @@
         "-display",
         "none",
         "-drive",
-        "file=/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_desktop_skf07i59/work.img,format=raw,if=ide,index=0,media=disk,cache=writeback",
+        "file=${XOS_LOCAL_PATH_24157bf4bb9c},format=raw,if=ide,index=0,media=disk,cache=writeback",
         "-qmp",
-        "unix:/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_vb3czrl5/qmp.sock,server=on,wait=off"
+        "unix:${XOS_LOCAL_PATH_a5dfe776ccf9},server=on,wait=off"
       ]
     },
     "dock-desktop-session": {
@@ -205,7 +205,7 @@
       },
       "image_sha256": "165686bb0de0b0b2f33645ede2cf10c2badb25ea363f3ef57ed74641503b0b08",
       "qemu_command": [
-        "/Users/perry_guo/Documents/ChatGPT/os/runtime/qemu-prefix/Cellar/qemu/11.1.2/bin/qemu-system-x86_64",
+        "${XOS_LOCAL_PATH_0939715e8e41}",
         "-machine",
         "pc-i440fx-10.0",
         "-accel",
@@ -223,7 +223,7 @@
         "-rtc",
         "base=utc,clock=host",
         "-drive",
-        "file=/Users/perry_guo/Documents/ChatGPT/os/XylophoneOS-aurora-glass/build/aurora_glass/system-v5/xos.img,format=raw,if=floppy,index=0,readonly=on",
+        "file=${XOS_LOCAL_PATH_51a25efb2781},format=raw,if=floppy,index=0,readonly=on",
         "-boot",
         "order=a,strict=on",
         "-no-reboot",
@@ -234,9 +234,9 @@
         "-display",
         "none",
         "-drive",
-        "file=/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_desktop_yc65tiuy/work.img,format=raw,if=ide,index=0,media=disk,cache=writeback",
+        "file=${XOS_LOCAL_PATH_78045a95f645},format=raw,if=ide,index=0,media=disk,cache=writeback",
         "-qmp",
-        "unix:/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_ikbex_kz/qmp.sock,server=on,wait=off"
+        "unix:${XOS_LOCAL_PATH_f8c3f0f25085},server=on,wait=off"
       ]
     },
     "dock-desktop-studio": {
@@ -253,7 +253,7 @@
       },
       "image_sha256": "165686bb0de0b0b2f33645ede2cf10c2badb25ea363f3ef57ed74641503b0b08",
       "qemu_command": [
-        "/Users/perry_guo/Documents/ChatGPT/os/runtime/qemu-prefix/Cellar/qemu/11.1.2/bin/qemu-system-x86_64",
+        "${XOS_LOCAL_PATH_0939715e8e41}",
         "-machine",
         "pc-i440fx-10.0",
         "-accel",
@@ -271,7 +271,7 @@
         "-rtc",
         "base=utc,clock=host",
         "-drive",
-        "file=/Users/perry_guo/Documents/ChatGPT/os/XylophoneOS-aurora-glass/build/aurora_glass/system-v5/xos.img,format=raw,if=floppy,index=0,readonly=on",
+        "file=${XOS_LOCAL_PATH_51a25efb2781},format=raw,if=floppy,index=0,readonly=on",
         "-boot",
         "order=a,strict=on",
         "-no-reboot",
@@ -282,9 +282,9 @@
         "-display",
         "none",
         "-drive",
-        "file=/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_desktop_c29r8srn/work.img,format=raw,if=ide,index=0,media=disk,cache=writeback",
+        "file=${XOS_LOCAL_PATH_752b9f1ccd0f},format=raw,if=ide,index=0,media=disk,cache=writeback",
         "-qmp",
-        "unix:/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_6w4c7l5q/qmp.sock,server=on,wait=off"
+        "unix:${XOS_LOCAL_PATH_d0ca73d41fc9},server=on,wait=off"
       ]
     },
     "dock-studio-rerun": {
@@ -301,7 +301,7 @@
       },
       "image_sha256": "165686bb0de0b0b2f33645ede2cf10c2badb25ea363f3ef57ed74641503b0b08",
       "qemu_command": [
-        "/Users/perry_guo/Documents/ChatGPT/os/runtime/qemu-prefix/opt/qemu/bin/qemu-system-x86_64",
+        "${XOS_LOCAL_PATH_94e60e5dbfb4}",
         "-machine",
         "pc-i440fx-10.0",
         "-accel",
@@ -319,7 +319,7 @@
         "-rtc",
         "base=utc,clock=host",
         "-drive",
-        "file=/Users/perry_guo/Documents/ChatGPT/os/XylophoneOS-aurora-glass/build/aurora_glass/system-v5/xos.img,format=raw,if=floppy,index=0,readonly=on",
+        "file=${XOS_LOCAL_PATH_51a25efb2781},format=raw,if=floppy,index=0,readonly=on",
         "-boot",
         "order=a,strict=on",
         "-no-reboot",
@@ -330,9 +330,9 @@
         "-display",
         "none",
         "-drive",
-        "file=/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_desktop_u_jw6znn/work.img,format=raw,if=ide,index=0,media=disk,cache=writeback",
+        "file=${XOS_LOCAL_PATH_7327f4814573},format=raw,if=ide,index=0,media=disk,cache=writeback",
         "-qmp",
-        "unix:/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_bmdgu9cl/qmp.sock,server=on,wait=off"
+        "unix:${XOS_LOCAL_PATH_4641089437fa},server=on,wait=off"
       ]
     },
     "dock-platform-dash": {
@@ -346,7 +346,7 @@
       },
       "image_sha256": "165686bb0de0b0b2f33645ede2cf10c2badb25ea363f3ef57ed74641503b0b08",
       "qemu_command": [
-        "/Users/perry_guo/Documents/ChatGPT/os/runtime/qemu-prefix/Cellar/qemu/11.1.2/bin/qemu-system-x86_64",
+        "${XOS_LOCAL_PATH_0939715e8e41}",
         "-machine",
         "pc-i440fx-10.0",
         "-accel",
@@ -364,7 +364,7 @@
         "-rtc",
         "base=utc,clock=host",
         "-drive",
-        "file=/Users/perry_guo/Documents/ChatGPT/os/XylophoneOS-aurora-glass/build/aurora_glass/system-v5/xos.img,format=raw,if=floppy,index=0,readonly=on",
+        "file=${XOS_LOCAL_PATH_51a25efb2781},format=raw,if=floppy,index=0,readonly=on",
         "-boot",
         "order=a,strict=on",
         "-no-reboot",
@@ -375,9 +375,9 @@
         "-display",
         "none",
         "-drive",
-        "file=/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_aurora_platform_4ygqrzlv/work.img,format=raw,if=ide,index=0,media=disk,cache=writeback",
+        "file=${XOS_LOCAL_PATH_300ce23e9b3a},format=raw,if=ide,index=0,media=disk,cache=writeback",
         "-qmp",
-        "unix:/var/folders/4c/g1vj7l516656nxhgql13ssxw0000gn/T/xos_nij4x3p2/qmp.sock,server=on,wait=off"
+        "unix:${XOS_LOCAL_PATH_34f69fc3d6cb},server=on,wait=off"
       ]
     }
   }
