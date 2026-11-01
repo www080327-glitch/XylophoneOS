@@ -5,7 +5,8 @@
 Supported indexes are SHA256SUMS files and JSON objects containing a path map,
 or a map under ``files`` or ``evidence_sha256``. Each value is a SHA-256 string
 or an object with ``sha256`` and optional ``bytes``. Paths are relative to the
-index directory. Missing files and malformed indexes fail.
+index directory unless ``--paths-root`` selects another repository directory.
+Missing files and malformed indexes fail.
 """
 import argparse
 import hashlib
@@ -136,14 +137,15 @@ class git_reader:
             raise ValueError("Git object reader failed")
 
 
-def verify(root, index, revision=None, field=None):
+def verify(root, index, revision=None, field=None, paths_root=None):
     index = safe_path(index)
+    base = safe_path(paths_root) if paths_root is not None else index.parent
     reader = git_reader(root, revision) if revision else checkout_reader(root)
     try:
         entries = parse_index(reader.read(index), index, field)
         failures = []
         for name, entry in entries.items():
-            target = index.parent / safe_path(name)
+            target = base / safe_path(name)
             try:
                 data = reader.read(target)
             except FileNotFoundError:
@@ -169,9 +171,10 @@ def main():
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--revision", help="verify index and files from this Git commit")
     parser.add_argument("--field", help="JSON field containing the path-to-hash map")
+    parser.add_argument("--paths-root", help="repository-relative root for index entries; '.' means repository root")
     args = parser.parse_args()
     try:
-        result = verify(args.root, args.index, args.revision, args.field)
+        result = verify(args.root, args.index, args.revision, args.field, args.paths_root)
     except (ValueError, OSError, UnicodeError, subprocess.SubprocessError) as exc:
         # Exception strings may contain the contributor's absolute checkout or
         # tool paths. Do not copy those into a report intended for sharing.

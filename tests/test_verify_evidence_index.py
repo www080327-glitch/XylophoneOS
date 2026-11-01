@@ -57,6 +57,13 @@ class verify_evidence_index_tests(unittest.TestCase):
         (self.report / "PACKAGE_SHA256SUMS").write_text(self.sha + "  evidence.txt\n")
         self.assertEqual(verifier.verify(self.root, "report/PACKAGE_SHA256SUMS")["status"], "PASS")
 
+    def test_repository_relative_index_entries(self):
+        (self.report / "SHA256SUMS").write_text(self.sha + "  report/evidence.txt\n")
+        self.assertEqual(verifier.verify(self.root, "report/SHA256SUMS")["status"], "FAIL")
+        self.assertEqual(verifier.verify(self.root, "report/SHA256SUMS", paths_root=".")["status"], "PASS")
+        with self.assertRaises(ValueError):
+            verifier.verify(self.root, "report/SHA256SUMS", paths_root="../outside")
+
     def test_empty_malformed_and_duplicate_indexes_fail_closed(self):
         for obj in ({}, {"evidence.txt": "bad"}, {"../outside": self.sha},
                     {"/absolute": self.sha}, {"evidence.txt": self.sha.upper()}):
