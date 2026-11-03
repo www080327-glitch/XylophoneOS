@@ -1,4 +1,4 @@
-# 0190 — SSG P3C bounded observation
+# 0195 — SSG P3C bounded observation
 
 2026-11-03 整理：本层仅包含 Watch 增量，依赖本轮 P3B。下文描述历史构建；旧 24/24 不作为本轮资格。
 
