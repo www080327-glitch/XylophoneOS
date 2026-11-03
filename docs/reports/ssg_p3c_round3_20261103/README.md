@@ -9,3 +9,5 @@ The four dynamic cases ran on diagnostic fixtures. The historical 24-session str
 Before these runs, initial cross-compiles caught stale SDK names, and guest launch attempts failed before boot due to missing receipt arguments/files and a race compiling the shared host disk helper. The source names were aligned, the receipt was supplied after build completion, and the host helper was prepared before concurrent guest launches. Those attempts are not included in the pass counts.
 
 A separate ordinary-binary run observed three Watch cycles and restored resources without emitting raw IPC diagnostics. A short repeat run passed 3/3 in a single guest boot. Its scope is recorded in the stress summary; the historical 24/24 gate remains unrun for this restack.
+
+All three Watch ELF hashes reproduced on the final P3B base. The Browser and Notes used by the guest runs match the [P3B runtime receipt](../ssg_p3b_round3_20261103/guest_runtime_build.json).

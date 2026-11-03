@@ -1,6 +1,6 @@
 {
   "status": "BUILT",
-  "base_commit": "226099b2b744b9e7d5a8ac14d1ffdfcdde970ed3",
+  "base_commit": "5b61a8731435c0e218bfd355dcefe41ada780880",
   "source_sha256": {
     "scripts/build_ssg_p3c.py": "021b559bac8d9b3af348bdae37bf6564978ba7dd80d03ae88ca6ace724c8b44c",
     "src/ports/qt6/build_fixture.py": "81e2e38cad7402827b956c4cc44d2bd9070896c9d5de4be4e11eecfb9f67abee",
