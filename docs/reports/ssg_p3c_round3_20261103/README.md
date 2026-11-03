@@ -7,3 +7,5 @@ The new Watch supervisor, diagnostic supervisor and contract fixture were cross-
 The four dynamic cases ran on diagnostic fixtures. The historical 24-session stress gate was not rerun, so this restack is **PARTIAL**. The Watch transport is a bounded stdout event stream. `globalAtomicSnapshot=NOT_IMPLEMENTED`; the historical single-source exit race remains `UNRESOLVED`.
 
 Before these runs, initial cross-compiles caught stale SDK names, and guest launch attempts failed before boot due to missing receipt arguments/files and a race compiling the shared host disk helper. The source names were aligned, the receipt was supplied after build completion, and the host helper was prepared before concurrent guest launches. Those attempts are not included in the pass counts.
+
+A separate ordinary-binary run observed three Watch cycles and restored resources without emitting raw IPC diagnostics. A short repeat run passed 3/3 in a single guest boot. Its scope is recorded in the stress summary; the historical 24/24 gate remains unrun for this restack.

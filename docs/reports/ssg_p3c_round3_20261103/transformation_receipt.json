@@ -20,6 +20,10 @@
     "contract_serial.log.gz": {
       "raw_sha256": "1345ee4d95b9d9e0cb5c0add3d3fc6f2dbde7626fcea036df8ed0a75b925de3a",
       "export_sha256": "0815e2bc4e3849d546b068bf8c716311e7527a81ff673582ec1dab30423836d2"
+    },
+    "ordinary_serial.log.gz": {
+      "raw_sha256": "a8cf28d33c8b19a92327997fa7a08388c1f04fc64af8584342ec36a6ba5db4c6",
+      "export_sha256": "b5e9f77a2d23708c6ca890716ca167953b3684f67020237c21fc77eb019f2bf0"
     }
   }
 }
