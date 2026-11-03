@@ -1,0 +1,11 @@
+{
+  "status": "OBSERVED",
+  "scope": "ordinary supervisor, ordinary Browser and ordinary Notes; no raw IPC or independent DOM Oracle in this run",
+  "browser_nodes": 267,
+  "notes_utf16_units": 4114,
+  "resources_restored": true,
+  "source_exits": [
+    "P3B_SOURCE_EXIT slot=browser reaped=1 cancelled=0 outcome=1 code=0",
+    "P3B_SOURCE_EXIT slot=notes reaped=1 cancelled=0 outcome=1 code=0"
+  ]
+}

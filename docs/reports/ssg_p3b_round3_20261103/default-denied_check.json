@@ -1,0 +1,11 @@
+{
+  "status": "PASSED_SCOPED",
+  "scope": "synthetic diagnostic build with separate captured IPC responses",
+  "browser": "DENIED",
+  "notes": "DENIED",
+  "resources_restored": true,
+  "source_exits": [
+    "P3B_SOURCE_EXIT slot=browser reaped=1 cancelled=0 outcome=1 code=0",
+    "P3B_SOURCE_EXIT slot=notes reaped=1 cancelled=0 outcome=1 code=0"
+  ]
+}

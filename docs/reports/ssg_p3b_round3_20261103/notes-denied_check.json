@@ -1,0 +1,16 @@
+{
+  "status": "PASSED_SCOPED",
+  "browser_nodes": 267,
+  "browser_pages": 34,
+  "notes_responses": 1,
+  "verifier_sha256": "6e787f5e4b8686389e2ef412780e0247b5d36d76662de53bd90e9e59ef8d52a4",
+  "notes_utf16_units": null,
+  "overlapping_local_id_namespaced": false,
+  "global_atomic_snapshot": "NOT_IMPLEMENTED",
+  "oracle": "independent liteHTML model and synthetic owner digest",
+  "resources_restored": true,
+  "source_exits": [
+    "P3B_SOURCE_EXIT slot=browser reaped=1 cancelled=0 outcome=1 code=0",
+    "P3B_SOURCE_EXIT slot=notes reaped=1 cancelled=0 outcome=1 code=0"
+  ]
+}
