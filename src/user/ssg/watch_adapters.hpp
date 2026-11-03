@@ -10,8 +10,8 @@ namespace ssg_watch {
 using alive_callback=bool (*)(void *);
 
 struct browser_payload final:provider_payload {
-    ssg_pipe::Baseline baseline;
-    explicit browser_payload(const ssg_pipe::Baseline &value):baseline(value){}
+    ssg_pipe::baseline baseline;
+    explicit browser_payload(const ssg_pipe::baseline &value):baseline(value){}
 };
 struct notes_payload final:provider_payload {
     ssg_multi::notes_baseline baseline;
@@ -57,7 +57,7 @@ public:
         const auto &a=static_cast<const browser_payload &>(*before.payload).baseline;
         const auto &b=static_cast<const browser_payload &>(*after.payload).baseline;
         const auto diff=ssg_pipe::compare_baselines(a,b);
-        if(diff.status!=ssg_pipe::DiffStatus::ok)return {"RESET_REQUIRED",{{"reason","BROWSER_DIFF_RESET"}}};
+        if(diff.status!=ssg_pipe::diff_status::ok)return {"RESET_REQUIRED",{{"reason","BROWSER_DIFF_RESET"}}};
         if(!diff.geometry_complete)return {"SOURCE_UNKNOWN",{{"reason","INCOMPLETE_GEOMETRY"}}};
         int scroll=0,geometry=0,visibility=0,other=0;
         for(const auto &change:diff.changes){
