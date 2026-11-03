@@ -251,7 +251,7 @@ int main(int argc,char **argv){
         bool notes_ok=collect_notes(nc,updated,next_failure) && alive(n);const u64 ne=thread::clock();
         browser_ok=browser_ok && alive(b);notes_ok=notes_ok && alive(n);
         const bool notes_same=notes_ok && updated.instance==note.instance && updated.epoch==note.epoch && updated.node==note.node && updated.revision==note.revision && updated.text==note.text;
-        const auto delta=browser_ok?ssg_pipe::compare_baselines(*collector.committed(),*fresh.committed()):ssg_pipe::Diff{};
+        const auto delta=browser_ok?ssg_pipe::compare_baselines(*collector.committed(),*fresh.committed()):ssg_pipe::baseline_diff_result{};
         const bool browser_same=browser_ok && delta.status==ssg_pipe::diff_status::ok && delta.changes.empty();
         const QJsonObject next{{"status",browser_ok&&notes_ok?"AGGREGATE_COMPLETE_OBSERVED":"AGGREGATE_PARTIAL"},
             {"semantics","sequential-per-source-non-atomic"},{"globalAtomicSnapshot","NOT_IMPLEMENTED"},
@@ -269,7 +269,7 @@ int main(int argc,char **argv){
         bool notes_ok=collect_notes(nc,updated,next_failure) && alive(n);const u64 ne=thread::clock();
         browser_ok=browser_ok && alive(b);notes_ok=notes_ok && alive(n);
         const bool unchanged=notes_ok && updated.instance==note.instance && updated.epoch==note.epoch && updated.node==note.node && updated.revision==note.revision && updated.text==note.text;
-        ssg_pipe::Diff changes;if(browser_ok)changes=ssg_pipe::compare_baselines(*collector.committed(),*fresh.committed());
+        ssg_pipe::baseline_diff_result changes;if(browser_ok)changes=ssg_pipe::compare_baselines(*collector.committed(),*fresh.committed());
         unsigned scroll=0,geometry=0,visibility=0,other=0;
         for(const auto &change:changes.changes){if(change.kind=="ScrollChanged")++scroll;else if(change.kind=="WindowGeometryChanged")++geometry;else if(change.kind=="VisibilityChanged")++visibility;else ++other;}
         const bool changed=browser_ok && changes.status==ssg_pipe::diff_status::ok && scroll==1 && collector.committed()->scroll!=fresh.committed()->scroll;
@@ -354,7 +354,7 @@ int main(int argc,char **argv){
         bool second_bok=collect_baseline(bc,second_browser) && second_browser.commit() && alive(b);const u64 second_bend=thread::clock();
         const bool second_nalive=alive(n);
         second_bok=second_bok && alive(b);
-        ssg_pipe::Diff delta;
+        ssg_pipe::baseline_diff_result delta;
         if(second_bok)delta=ssg_pipe::compare_baselines(*collector.committed(),*second_browser.committed());
         const bool browser_unchanged=second_bok && delta.status==ssg_pipe::diff_status::ok && delta.changes.empty();
         const bool notes_changed=second_notes && second_nalive && note.instance==updated.instance && note.epoch==updated.epoch && note.node==updated.node && note.revision!=updated.revision && note.text!=updated.text;
