@@ -1,0 +1,16 @@
+{
+  "transforms": [
+    {
+      "path": "single_source_ab_serial.log.gz",
+      "rule": "deterministic gzip",
+      "raw_sha256": "02ab5f62b291827af72fcc8d6edf7015d4be9fcee6072fbf6b10033ec1512397",
+      "export_sha256": "9771d3fa12893c83a949f4253b9b0f40a2b42748719e0e33d7f276afa531f5e2"
+    },
+    {
+      "path": "single_source_ab_guest.json",
+      "rule": "retain source, input digests, QEMU template, structure and resource evidence only",
+      "raw_sha256": "56fb2d36cdf6b83277dd218ed00d334708d1e5ec75af36a0466220aa47d7246f",
+      "export_sha256": "754b65b0b34d9584c38961bf638e6254b6fc408945d2cc51e321e0c6e30f9a4a"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PASSED_SCOPED",
+  "case": "pipe-isolation",
+  "foreign_read_write_denials": 4,
+  "stale_token_denials": 4,
+  "browser_nodes_each": [
+    267,
+    267
+  ],
+  "resources_restored": true,
+  "source_exits": [
+    "P3B_SOURCE_EXIT slot=browser reaped=1 cancelled=0 outcome=1 code=0",
+    "P3B_SOURCE_EXIT slot=notes reaped=1 cancelled=0 outcome=1 code=0"
+  ]
+}
