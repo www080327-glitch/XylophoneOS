@@ -60,4 +60,5 @@
 | 0185 | `0185_terminal_select_contract.md` | 单终端 select 的直接客体检查（2026-11-03） |
 | 0186 | `0186_terminal_input_flush_guest.md` | 已排队输入的清空与新输入（2026-11-03） |
 | 0189 | `0189_ssg_p3b_dual_provider.md` | 双 Provider 净增量整理（2026-11-03） |
+| 0190 | `0190_ssg_p3c_engine_neutral_watch.md` | 持续 Watch 净增量整理（2026-11-03） |
 | 0190 | [SSG-P1 cross-process prototype](0190_ssg_p1_cross_process.md) | Scoped SSG prototype and retained failures (PR #46) |
