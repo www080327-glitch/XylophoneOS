@@ -15,7 +15,7 @@ failure. The event includes those fields, the previous and new revision, a
 source-qualified namespace object (slot, instance and epoch), a source-local sequence and a bounded change summary.
 The capability set describes what the *adapter* can establish; `SCOPED`,
 `LIMITED`, `UNSUPPORTED` and `UNKNOWN` must not be upgraded to universal access.
-source_session revision is not a timestamp, identity or authorization. A complete
+Source revision is not a timestamp, identity or authorization. A complete
 source is still `UNVERIFIED_AFTER_OBSERVATION`, and the two observations and
 liveness checks are sequential: `globalAtomicSnapshot=NOT_IMPLEMENTED`.
 An empty event epoch or revision means that value is unknown or unavailable;
