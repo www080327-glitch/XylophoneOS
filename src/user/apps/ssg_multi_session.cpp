@@ -62,7 +62,7 @@ static QString client_failure(const source_client &client){
     return QStringLiteral("COLLECTION_OR_LIVENESS");
 }
 static QString source_failure(const QString &reason){return reason.isEmpty()?QStringLiteral("COLLECTION_OR_LIVENESS"):reason;}
-static QJsonObject browser_result(const ssg_pipe::Baseline &b,u64 start,u64 end,bool hidden){
+static QJsonObject browser_result(const ssg_pipe::baseline &b,u64 start,u64 end,bool hidden){
     QJsonArray nodes;
     for(const auto &n:b.nodes){
         QJsonObject node{{"id",identity("browser",QString::fromStdString(b.instance),QString::fromStdString(b.epoch),QString::fromStdString(n.id))},
@@ -252,7 +252,7 @@ int main(int argc,char **argv){
         browser_ok=browser_ok && alive(b);notes_ok=notes_ok && alive(n);
         const bool notes_same=notes_ok && updated.instance==note.instance && updated.epoch==note.epoch && updated.node==note.node && updated.revision==note.revision && updated.text==note.text;
         const auto delta=browser_ok?ssg_pipe::compare_baselines(*collector.committed(),*fresh.committed()):ssg_pipe::Diff{};
-        const bool browser_same=browser_ok && delta.status==ssg_pipe::DiffStatus::ok && delta.changes.empty();
+        const bool browser_same=browser_ok && delta.status==ssg_pipe::diff_status::ok && delta.changes.empty();
         const QJsonObject next{{"status",browser_ok&&notes_ok?"AGGREGATE_COMPLETE_OBSERVED":"AGGREGATE_PARTIAL"},
             {"semantics","sequential-per-source-non-atomic"},{"globalAtomicSnapshot","NOT_IMPLEMENTED"},
             {"sources",QJsonArray{browser_ok?browser_result(*fresh.committed(),bs,be,hidden_browser):unavailable_result(b,bs,be,"UNAVAILABLE",client_failure(bc),hidden_browser),
@@ -272,7 +272,7 @@ int main(int argc,char **argv){
         ssg_pipe::Diff changes;if(browser_ok)changes=ssg_pipe::compare_baselines(*collector.committed(),*fresh.committed());
         unsigned scroll=0,geometry=0,visibility=0,other=0;
         for(const auto &change:changes.changes){if(change.kind=="ScrollChanged")++scroll;else if(change.kind=="WindowGeometryChanged")++geometry;else if(change.kind=="VisibilityChanged")++visibility;else ++other;}
-        const bool changed=browser_ok && changes.status==ssg_pipe::DiffStatus::ok && scroll==1 && collector.committed()->scroll!=fresh.committed()->scroll;
+        const bool changed=browser_ok && changes.status==ssg_pipe::diff_status::ok && scroll==1 && collector.committed()->scroll!=fresh.committed()->scroll;
         const QJsonObject next{{"status",browser_ok&&notes_ok?"AGGREGATE_COMPLETE_OBSERVED":"AGGREGATE_PARTIAL"},
             {"semantics","sequential-per-source-non-atomic"},{"globalAtomicSnapshot","NOT_IMPLEMENTED"},
             {"sources",QJsonArray{browser_ok?browser_result(*fresh.committed(),bs,be,hidden_browser):unavailable_result(b,bs,be,"UNAVAILABLE",client_failure(bc),hidden_browser),
@@ -292,7 +292,7 @@ int main(int argc,char **argv){
         bool notes_ok=collect_notes(nc,updated,next_failure) && alive(n);const u64 ne=thread::clock();
         browser_ok=browser_ok && alive(b);notes_ok=notes_ok && alive(n);
         const bool replaced=browser_ok && old.instance==fresh.committed()->instance && old.epoch!=fresh.committed()->epoch &&
-            ssg_pipe::compare_baselines(old,*fresh.committed()).status==ssg_pipe::DiffStatus::reset_required && transport && old_ref.value("status")=="SOURCE_REPLACED";
+            ssg_pipe::compare_baselines(old,*fresh.committed()).status==ssg_pipe::diff_status::reset_required && transport && old_ref.value("status")=="SOURCE_REPLACED";
         const bool unchanged=notes_ok && updated.instance==note.instance && updated.epoch==note.epoch && updated.node==note.node && updated.revision==note.revision && updated.text==note.text;
         const QJsonObject next{{"status",browser_ok&&notes_ok?"AGGREGATE_COMPLETE_OBSERVED":"AGGREGATE_PARTIAL"},
             {"semantics","sequential-per-source-non-atomic"},{"globalAtomicSnapshot","NOT_IMPLEMENTED"},
@@ -356,7 +356,7 @@ int main(int argc,char **argv){
         second_bok=second_bok && alive(b);
         ssg_pipe::Diff delta;
         if(second_bok)delta=ssg_pipe::compare_baselines(*collector.committed(),*second_browser.committed());
-        const bool browser_unchanged=second_bok && delta.status==ssg_pipe::DiffStatus::ok && delta.changes.empty();
+        const bool browser_unchanged=second_bok && delta.status==ssg_pipe::diff_status::ok && delta.changes.empty();
         const bool notes_changed=second_notes && second_nalive && note.instance==updated.instance && note.epoch==updated.epoch && note.node==updated.node && note.revision!=updated.revision && note.text!=updated.text;
         const bool expected_edit=std::strcmp(argv[3],"--test-edit")==0;
         const bool expected_exit=std::strcmp(argv[3],"--test-notes-exit")==0;
