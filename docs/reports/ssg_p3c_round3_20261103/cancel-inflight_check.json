@@ -1,0 +1,11 @@
+{
+  "status": "PASSED_SCOPED",
+  "scope": "cooperative stop over a test pipe during a real stalled Notes range transaction",
+  "staged_utf16_units_discarded": 1023,
+  "events_before_stop": 2,
+  "resources_restored": true,
+  "source_exits": [
+    "P3B_SOURCE_EXIT slot=browser reaped=1 cancelled=0 outcome=1 code=0",
+    "P3B_SOURCE_EXIT slot=notes reaped=1 cancelled=0 outcome=1 code=0"
+  ]
+}

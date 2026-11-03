@@ -1,0 +1,44 @@
+{
+  "status": "PASSED_SCOPED",
+  "case": "scroll",
+  "cycles": 3,
+  "events": 6,
+  "namespace_formats": [
+    "structured"
+  ],
+  "capped_retries": 0,
+  "ipc_requests": 132,
+  "ipc_bytes_including_frame_headers": 452668,
+  "elapsed_seconds": 47.182,
+  "resource_samples": [
+    "BROWSER_SAMPLE pages=7371 threads=4 tab=0 scroll=0",
+    "EDITOR_SAMPLE pages=5402 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5402 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5402 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5410 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0",
+    "EDITOR_SAMPLE pages=5414 threads=2 scroll=0 cursor=0"
+  ],
+  "resources_restored": true,
+  "source_exits": [
+    "P3B_SOURCE_EXIT slot=browser reaped=1 cancelled=0 outcome=1 code=0",
+    "P3B_SOURCE_EXIT slot=notes reaped=1 cancelled=0 outcome=1 code=0"
+  ],
+  "global_atomic_snapshot": "NOT_IMPLEMENTED"
+}

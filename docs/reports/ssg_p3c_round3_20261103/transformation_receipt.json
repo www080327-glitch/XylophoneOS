@@ -1,0 +1,29 @@
+{
+  "rules": "deterministic gzip or removal of cross-leaf digest fields from JSON; guest results unchanged",
+  "changes": {
+    "edit_serial.log.gz": {
+      "raw_sha256": "fd2eaee9581b61d9a493eea0b250eb90234c556b91accf628efe76ccc4ef9c26",
+      "export_sha256": "7b3345e6f0110c1c4eefee01852ee3220bc2d8efe4cdd8831934927088740c37"
+    },
+    "scroll_serial.log.gz": {
+      "raw_sha256": "e36b63f7c57714d274e11de31b4be100608a93719b2244b111843b7e63ba444c",
+      "export_sha256": "c0531c3448994c1b9b94f01099c97147cdf769eec6088f40ba6cce6d52d6ddd5"
+    },
+    "revoke_serial.log.gz": {
+      "raw_sha256": "0db1483f05ef5fe25cd9e3e5ebdcc8041b2c8a4cede341d397f9cd80b2319ac3",
+      "export_sha256": "302240fe077ad9b852e6f4162724dc89ba11e0eedbf0a715d9172e76cbfe236e"
+    },
+    "cancel-inflight_serial.log.gz": {
+      "raw_sha256": "00632e02dc8a2ad1458246490b875bb9aa070cc605538ebfa3a50a062502ce3a",
+      "export_sha256": "894f59d769adb1aa1efe6b9ca81b5e8a82e9c0f7136b13eeba40d118abc56142"
+    },
+    "contract_serial.log.gz": {
+      "raw_sha256": "1345ee4d95b9d9e0cb5c0add3d3fc6f2dbde7626fcea036df8ed0a75b925de3a",
+      "export_sha256": "0815e2bc4e3849d546b068bf8c716311e7527a81ff673582ec1dab30423836d2"
+    },
+    "ordinary_serial.log.gz": {
+      "raw_sha256": "a8cf28d33c8b19a92327997fa7a08388c1f04fc64af8584342ec36a6ba5db4c6",
+      "export_sha256": "b5e9f77a2d23708c6ca890716ca167953b3684f67020237c21fc77eb019f2bf0"
+    }
+  }
+}
