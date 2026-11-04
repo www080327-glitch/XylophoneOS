@@ -50,6 +50,8 @@ class pipe_provider final : public QObject {
     using snapshot_fn=std::function<QJsonObject(bool,const QString &,unsigned)>;
     using diff_fn=std::function<QJsonObject(quint64,const QString &)>;
     snapshot_fn snapshot_source;diff_fn diff_source;
+    std::function<QJsonObject(const QString &,const QString &,int,int,const QString &)> range_source;
+    std::function<QJsonObject(const QJsonObject &)> page_source;
     QString instance;
     QThread *worker=nullptr;
     gui_watchdog watch;
@@ -60,12 +62,28 @@ class pipe_provider final : public QObject {
         QJsonParseError error{};const auto doc=QJsonDocument::fromJson(bytes,&error);
         if(error.error!=QJsonParseError::NoError || !doc.isObject())return {{"status","BAD_REQUEST"}};
         const auto request=doc.object();const auto op=request.value("op").toString();
+        if(op=="snapshot_begin" || op=="snapshot_next" || op=="snapshot_cancel"){
+            if(!page_source)return {{"status","UNSUPPORTED"}};
+            if(op!="snapshot_begin" && request.value("sourceInstance").toString()!=instance)
+                return {{"status","SOURCE_REPLACED"},{"sourceInstance",instance}};
+            auto result=page_source(request);result["sourceInstance"]=instance;
+            result["providerPid"]=QString::number(xos::sdk::pid());return result;
+        }
         const auto role=request.value("role").toString();const auto visible=request.value("visibleOnly").toBool(false);
         const auto limit=request.contains("maxNodes")?request.value("maxNodes").toInt(-1):96;
-        if(role.size()>32 || limit<1 || limit>96 || (op!="snapshot" && op!="diff" && op!="detail"))
+        if(role.size()>32 || limit<1 || limit>96 || (op!="snapshot" && op!="diff" && op!="detail" && op!="text_range"))
             return {{"status","BAD_REQUEST"}};
         if(op!="snapshot" && request.value("sourceInstance").toString()!=instance)
             return {{"status","SOURCE_REPLACED"},{"sourceInstance",instance}};
+        if(op=="text_range"){
+            if(!range_source)return {{"status","UNSUPPORTED"}};
+            const auto start=request.value("start"),maximum=request.value("maxLength");
+            if(!start.isDouble() || !maximum.isDouble() || start.toDouble()!=start.toInt(-1) || maximum.toDouble()!=maximum.toInt(-1) ||
+               !request.value("nodeId").isString() || !request.value("sourceEpoch").isString() ||
+               (request.contains("documentRevision") && !request.value("documentRevision").isString()))return {{"status","BAD_REQUEST"}};
+            auto result=range_source(request.value("sourceEpoch").toString(),request.value("nodeId").toString(),start.toInt(),maximum.toInt(),request.value("documentRevision").toString());
+            result["sourceInstance"]=instance;result["providerPid"]=QString::number(xos::sdk::pid());return result;
+        }
         auto snapshot=snapshot_source(visible,role,unsigned(limit));
         snapshot["sourceInstance"]=instance;
         snapshot["providerPid"]=QString::number(xos::sdk::pid());
@@ -123,9 +141,10 @@ public:
     pipe_provider(qt_scene &source,QString source_instance)
         :snapshot_source([&source](bool visible,const QString &role,unsigned limit){source.set_node_limit(limit);return source.snapshot(visible,role);}),
          diff_source([&source](quint64 version,const QString &epoch){return source.diff(version,epoch);}),
+         range_source([&source](const QString &epoch,const QString &id,int start,int maximum,const QString &revision){return source.text_range(epoch,id,start,maximum,revision);}),
          instance(std::move(source_instance)),watch(this){}
-    pipe_provider(QString source_instance,snapshot_fn snapshot,diff_fn diff)
-        :snapshot_source(std::move(snapshot)),diff_source(std::move(diff)),
+    pipe_provider(QString source_instance,snapshot_fn snapshot,diff_fn diff,std::function<QJsonObject(const QJsonObject &)> page={})
+        :snapshot_source(std::move(snapshot)),diff_source(std::move(diff)),page_source(std::move(page)),
          instance(std::move(source_instance)),watch(this){}
     void start(){worker=QThread::create([this]{run();});worker->start();}
     void stop(){
