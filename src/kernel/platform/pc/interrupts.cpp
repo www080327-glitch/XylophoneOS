@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT AND Apache-2.0
+// SPDX-License-Identifier: Apache-2.0
 // PC PIC/PIT initialization and pure interrupt acknowledgment.
 #include "interrupts.hpp"
 #include "arch/x86_64/io.hpp"
@@ -50,9 +50,16 @@ void pic_input_enable() {
     change_bit(master_data, 0x06, false);
     change_bit(slave_data, 0x10, false);
 }
+void pic_mask(u8 irq, bool masked) {
+    if (irq < 8) change_bit(master_data, static_cast<u8>(1u << irq), masked);
+    else if (irq < 16) change_bit(slave_data, static_cast<u8>(1u << (irq - 8)), masked);
+}
 }
 
 namespace xos::platform {
+void irq_mask(u8 irq) { pc::pic_mask(irq, true); }
+void irq_unmask(u8 irq) { pc::pic_mask(irq, false); }
+void irq_acknowledge(u8 irq) { pc::pic_eoi(irq); }
 void interrupts_init() {
     if (pc::initialized) { return; }
     // System boot calls this after IDT and task structures exist, with IF=0.

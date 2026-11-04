@@ -4,7 +4,7 @@
 目标是能在系统内编辑、保存、编译和运行程序。
 
 开发前读 [开发纪律](docs/Discipline.md)、[当前状态](docs/state.md)、
-[项目宪法与当前登记](docs/xos_plan.md)。`localpilot/` 是独立项目，不参与 XOS 构建。
+[项目宪法与当前登记](docs/xos_plan.md)。
 
 ## 当前发行：0.0.1-1026
 
@@ -32,6 +32,11 @@ dash。
 发行说明见 [0.0.1-1026](docs/releases/0.0.1-1026.md)，构建与验收证据见
 [docs/project_overview.md](docs/project_overview.md)。
 上一次发行 [0.0.1-1024](docs/releases/0.0.1-1024.md) 保留为历史版本。
+
+下一版本号已定为 **0.0.2-1103**（`VERSION` 已更新，构建与安装盘随之携带该版本），
+尚未发布：冻结、打包与上传仍按
+[发行准备](docs/releases/next_release.md) 逐项执行，未发布前 1026 仍是唯一可下载
+发行。
 
 ## 从源码构建
 
@@ -73,12 +78,13 @@ ring3 用户任务、每任务地址空间、PIT 抢占、IPC、用户故障隔�
 
 ## 已知边界
 
-- 仅 BIOS/QEMU x86-64；UEFI、SMP、完整 POSIX、Qt 图形尚未完成。
+- 仅 BIOS/QEMU x86-64；UEFI、SMP、完整 POSIX 尚未完成；QML/Quick 未实现。
 - dash 不是完整 POSIX shell：后台/信号/终端语义仍有限。
 - CPython 没有安全熵、墙钟、socket/TLS、fork/subprocess 等完整 POSIX 能力。
 - xypm P2 写入事务/P3 仓库仍未完整交付；签名不等于沙箱。
 - 旧全量压力与部分历史回归未在本发行重跑；未跑项不会被写成通过。
-- Qt 是未来 GUI 主线，目前没有实现；见 [Qt 评估](docs/plans/qt.md)。
+- Qt 已按受限客体功能验收（QtCore/QtGui/QPA，单全屏 raster），未取得发行资格；
+  QML/Quick 未实现。见 [Qt 评估](docs/plans/qt.md) 与 [许可证管理](docs/licensing.md)。
 
 ## 文档与许可
 
